@@ -2,12 +2,16 @@
 
 A practical example to detect and characterize exoplanets.
 
+The full documentation is at https://tiziano1590.github.io/comp_astro_25/index.html
+
 ## Installation
 
 ### Prerequisites
+
 - Python >= 3.10
 
 ### Install from source
+
 ```bash
 git clone https://github.com/tiziano1590/comp_astro_25.git
 cd comp_astro_25
@@ -15,6 +19,7 @@ pip install .
 ```
 
 ### Development installation
+
 ```bash
 git clone https://github.com/tiziano1590/comp_astro_25.git
 cd comp_astro_25
