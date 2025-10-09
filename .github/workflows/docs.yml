@@ -44,12 +44,8 @@ jobs:
       run: |
         # Create a clean deployment directory
         mkdir -p _site
-        # Copy the landing page
-        cp index.html _site/
-        # Copy the entire docs structure including _build
-        cp -r docs _site/
-        # Also copy other necessary files
-        cp -r .github _site/ 2>/dev/null || true
+        # Copy the built HTML documentation to the root
+        cp -r docs/_build/html/* _site/
         
     - name: Setup Pages
       uses: actions/configure-pages@v4
