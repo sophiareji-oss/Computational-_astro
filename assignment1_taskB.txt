@@ -1,0 +1,2 @@
+date : thu Oct 9 19:48:21 2025 +0200
+HashCode : updated readme
