@@ -2,22 +2,29 @@ import batman
 import numpy as np
 import matplotlib.pyplot as plt
 
-params = batman.TransitParams()       #object to store transit parameters
-params.t0 = 0.                        #time of inferior conjunction
-params.per = 2.615838                 #orbital period
-params.rp = 0.973                       #planet radius (in units of stellar radii)
-params.a = 0.0369                        #semi-major axis (in units of stellar radii)
-params.inc = 88.7                      #orbital inclination (in degrees)
-params.ecc = 0.0456                       #eccentricity
-params.w = 261.0                        #longitude of periastron (in degrees)
-params.limb_dark = "quadratic"        #limb darkening model
-params.u = [0.4984,0.0785]      #limb darkening coefficients [u1, u2, u3, u4]
+class Transit:
+	def __init__(self, input_params):
+		self.input_params = input_params
+		self.params = batman.TransitParams()       #object to store transit parameters
+		self.params.name = input_params['name']    # the name of the planet
+		self.params.t0 = input_params['t0']                #time of inferior conjunction
+		self.params.per = input_params['per']                #orbital period
+		self.params.rp = input_params['rp']              #planet radius (in units of stellar radii)
+		self.params.a = input_params['a']                   #semi-major axis (in units of stellar radii)
+		self.params.inc = input_params['inc']                      #orbital inclination (in degrees)
+		self.params.ecc = input_params['ecc']                    #eccentricity
+		self.params.w = input_params['w']                        #longitude of periastron (in degrees)
+		self.params.limb_dark = input_params['limb_dark']        #limb darkening model
+		self.params.u = input_params['u']
+	
+	def flux(self):
+		t = np.linspace(-0.2, 0.2, 1000)  #times at which to calculate light curve
+		m = batman.TransitModel(self.params, t)    #initializes model
 
-t = np.linspace(-0.075, 0.075, 1000)  #times at which to calculate light curve
-m = batman.TransitModel(params, t)    #initializes model
+		flux = m.light_curve(self.params)
 
-flux = m.light_curve(params)
-
-plt.plot(t, flux)
-plt.savefig('XO-2N_b_assignment1_taskF.png')
-
+		plt.plot(t, flux)
+		plt.ylabel("Relative Flux")
+		plt.xlabel("time from central transit (days)")
+		plt.title("Light curve of {0} transit".format(self.params.name))
+		plt.savefig('{}_assignment1_taskF.png'.format(self.params.name))
