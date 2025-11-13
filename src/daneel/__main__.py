@@ -17,6 +17,15 @@ def main():
     )
 
     parser.add_argument(
+        "-t",
+        "--transit",
+        dest="transit",
+        required=False,
+        help="Plots transit lightcurve from yaml file",
+        action="store_true",
+    )
+
+    parser.add_argument(
         "-d",
         "--detect",
         dest="detect",
@@ -24,6 +33,7 @@ def main():
         help="Initialise detection algorithms for Exoplanets",
         action="store_true",
     )
+    
 
     parser.add_argument(
         "-a",
@@ -51,9 +61,12 @@ def main():
 
     input_pars = Parameters(args.input_file).params
 
-    if args.detect:
+    if args.transit:
+        transit = TransitModel(input_pars['transit'])
+        transit.plot_light_curve()
+    elif args.detect:
         pass
-    if args.atmosphere:
+    elif args.atmosphere:
         pass
     if args.transit:
     	transit = Transit(input_pars)
