@@ -16,14 +16,14 @@ def main():
         help="Input par file to pass",
     )
 
-    parser.add_argument(
-        "-t",
-        "--transit",
-        dest="transit",
-        required=False,
-        help="Plots transit lightcurve from yaml file",
-        action="store_true",
-    )
+    #parser.add_argument(
+      #  "-t",
+       # "--transit",
+       # dest="transit",
+        #required=False,
+       # help="Plots transit lightcurve from yaml file",
+       # action="store_true",
+    #)
 
     parser.add_argument(
         "-d",
@@ -61,12 +61,12 @@ def main():
 
     input_pars = Parameters(args.input_file).params
 
-    if args.transit:
-        transit = TransitModel(input_pars['transit'])
-        transit.plot_light_curve()
-    elif args.detect:
+    #if args.transit:
+     #   transit = TransitModel(input_pars['transit'])
+      #  transit.plot_light_curve()
+    if args.detect:
         pass
-    elif args.atmosphere:
+    if args.atmosphere:
         pass
     if args.transit:
     	transit = Transit(input_pars)
