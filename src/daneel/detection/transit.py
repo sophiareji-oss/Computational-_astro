@@ -27,8 +27,10 @@ class Transit:
 
 			flux = m.light_curve(self.params)
 
-			plt.plot(t, flux)
+			plt.plot(t, flux,label="{} planet transit".format(key))
 			plt.ylabel("Relative Flux")
 			plt.xlabel("time from central transit (days)")
-			plt.title("Light curve of {} transit".format(key))
-			plt.savefig('{}_transit_lightcurve.png'.format(key))
+			plt.title("Light curve of the transit")
+			
+		plt.legend()
+		plt.savefig('transit_lightcurve.png')
