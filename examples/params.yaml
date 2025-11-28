@@ -1,0 +1,36 @@
+transit:
+  XO-2N b:
+    t0: 0. # time of inferior conjunction
+    per: 2.615838 # orbital period in days
+    rp: 0.103 # planet radius (in units of stellar radii)
+    a: 7.993 # semi-major axis (in units of stellar radii)
+    inc: 88.01 # orbital inclination (in degrees)
+    ecc: 0.028 # eccentricity
+    w : 261 # longitude of periastron (in degrees)
+    u : [0.4984,0.0785] # limb darkening coefficients [u1, u2]
+    limb_dark: quadratic # limb darkening model
+    
+  dummy_taskB:
+    t0: 0.
+    per: 2.615838 
+    rp: 0.0515
+    a: 7.993
+    inc: 88.01
+    ecc: 0.028
+    w : 261
+    u : [0.4984,0.0785]
+    limb_dark: quadratic
+    
+  dummy_taskC:
+    t0: 0.
+    per: 2.615838 
+    rp: 0.206
+    a: 7.993
+    inc: 88.01
+    ecc: 0.028
+    w : 261
+    u : [0.4984,0.0785]
+    limb_dark: quadratic
+    
+classifier:
+  type: cnn # [cnn, rf] for Convolutional Neural Network and Random Forest
