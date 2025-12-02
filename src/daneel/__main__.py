@@ -20,9 +20,9 @@ def main():
         "-d",
         "--detect",
         dest="detect",
+        type = str,
         required=False,
         help="Initialise detection algorithms for Exoplanets",
-        action="store_true",
     )
 
     parser.add_argument(
@@ -42,7 +42,6 @@ def main():
         help="Plotting the light curve of the transit",
         action="store_true",
     )
-
     args = parser.parse_args()
 
     """Launch Daneel"""
@@ -52,12 +51,19 @@ def main():
     input_pars = Parameters(args.input_file).params
 
     if args.detect:
-        pass
+        CSV_PATH = '/home/sijis/Desktop/com_ast/test/Computational-_astro/src/daneel/detection/tess_data.csv'    # change if needed
+        N_BINS = 1000
+        USE_SCALER = False                  # Random Forest doesn't need scaling; set True if you want comparability
+        SAMPLES_PER_CLASS = 350             # per-class size after augmentation (train split only)
+        if args.detect =='cnn':
+            USE_SCALER = True
+        model = ML(CSV_PATH,N_BINS,USE_SCALER,SAMPLES_PER_CLASS,args.detect)
+        model.main()
     if args.atmosphere:
         pass
     if args.transit:
-    	transit = Transit(input_pars)
-    	transit.flux() 
+        transit = Transit(input_pars)
+        transit.flux() 
 
     finish = datetime.datetime.now()
     print(f"Daneel finishes at {finish}")
