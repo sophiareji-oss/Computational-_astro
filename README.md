@@ -37,7 +37,7 @@ daneel -i <input_file> [options]
 ### Command-line options
 
 - `-i, --input`: Input parameter file (required)
-- `-d, --detect`: Initialize detection algorithms for exoplanets
+- `-d MODEL, --detect MODEL`: Initialize detection algorithms for exoplanets where MODEL can be rf(Random Forest)/dt(Decision tree)/cnn(convolutional neural network) 
 - `-a, --atmosphere`: Atmospheric characterization from input transmission spectrum
 - `-t, --transit`: Plotting the light curve of the transit
 
@@ -45,13 +45,13 @@ daneel -i <input_file> [options]
 
 ```bash
 # Run exoplanet detection
-daneel -i parameters.yaml -d
+daneel -i parameters.yaml -d rf
 
 # Run atmospheric characterization
 daneel -i parameters.yaml -a
 
 # Run both detection and atmospheric analysis
-daneel -i parameters.yaml -d -a
+daneel -i parameters.yaml -d rf -a
 
 # Run the light curve plotting for the transit
 daneel -i parameters.yaml -t

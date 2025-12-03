@@ -19,10 +19,10 @@ def main():
     parser.add_argument(
         "-d",
         "--detect",
-        dest="detect",
+        dest="model",
         type = str,
         required=False,
-        help="Initialise detection algorithms for Exoplanets",
+        help="Initialise detection algorithms for Exoplanets. MODEL =rf/dt/cnn",
     )
 
     parser.add_argument(
@@ -57,7 +57,7 @@ def main():
         SAMPLES_PER_CLASS = 350             # per-class size after augmentation (train split only)
         if args.detect =='cnn':
             USE_SCALER = True
-        model = ML(CSV_PATH,N_BINS,USE_SCALER,SAMPLES_PER_CLASS,args.detect)
+        model = ML(CSV_PATH,N_BINS,USE_SCALER,SAMPLES_PER_CLASS,args.model)
         model.main()
     if args.atmosphere:
         pass
