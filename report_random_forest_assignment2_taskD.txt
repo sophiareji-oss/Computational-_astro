@@ -1,0 +1,101 @@
+First configaration:
+	n_estimators = 500
+	max_depth    = None
+	
+	Classification report (optimal threshold: 0.3620):
+              precision    recall  f1-score   support
+
+  Non-Planet     0.9859    0.7368    0.8434        95
+      Planet     0.7881    0.9894    0.8774        94
+
+    accuracy                         0.8624       189
+   macro avg     0.8870    0.8631    0.8604       189
+weighted avg     0.8875    0.8624    0.8603       189
+
+
+	Confusion Matrix 
+	
+			Predicted	
+			Non-Planet	Planet
+	Non-Planet	70 (37.0%)	25(13.2%)
+True
+	Planet		1 (0.5%)	93 (49.2%)
+	
+	
+Second configaration:
+	n_estimators = 500
+	max_depth    = 10
+	
+	Classification report (optimal threshold: 0.3473):
+              precision    recall  f1-score   support
+
+  Non-Planet     0.9861    0.7474    0.8503        95
+      Planet     0.7949    0.9894    0.8815        94
+
+    accuracy                         0.8677       189
+   macro avg     0.8905    0.8684    0.8659       189
+weighted avg     0.8910    0.8677    0.8658       189
+
+
+	Confusion Matrix 
+	
+			Predicted	
+			Non-Planet	Planet
+	Non-Planet	71 (37.6%)	24(12.7%)
+True
+	Planet		1 (0.5%)	93 (49.2%)
+
+third configaration:
+	n_estimators = 250
+	max_depth    = 10
+	
+	Classification report (optimal threshold: 0.3473):
+              precision    recall  f1-score   support
+
+  Non-Planet     0.9861    0.7474    0.8503        95
+      Planet     0.7949    0.9894    0.8815        94
+
+    accuracy                         0.8677       189
+   macro avg     0.8905    0.8684    0.8659       189
+weighted avg     0.8910    0.8677    0.8658       189
+
+
+	Confusion Matrix 
+	
+			Predicted	
+			Non-Planet	Planet
+	Non-Planet	71 (37.6%)	24(12.7%)
+True
+	Planet		1 (0.5%)	93 (49.2%)	
+	
+	
+	
+fourth configaration:
+	n_estimators = 100
+	max_depth    = 10
+	
+	Classification report (optimal threshold: 0.4048):
+              precision    recall  f1-score   support
+
+  Non-Planet     0.9733    0.7684    0.8588        95
+      Planet     0.8070    0.9787    0.8846        94
+
+    accuracy                         0.8730       189
+   macro avg     0.8902    0.8736    0.8717       189
+weighted avg     0.8906    0.8730    0.8717       189
+
+
+	Confusion Matrix 
+	
+			Predicted	
+			Non-Planet	Planet
+	Non-Planet	73 (38.6%)	22(11.6%)
+True
+	Planet		2 (1.1%)	92 (48.7%)
+	
+	
+	
+	
+	
+	
+
