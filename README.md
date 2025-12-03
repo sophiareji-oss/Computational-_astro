@@ -65,7 +65,7 @@ The input file should be a YAML file containing the necessary parameters for the
 The YAML file should be in following format.
 
 transit:
-  XO-2N b:
+  XO-2N b:               # name of the planet
     t0: 0.               # time of inferior conjunction
     per: 2.615838        # orbital period in days
     rp: 0.103            # planet radius (in units of stellar radii)
