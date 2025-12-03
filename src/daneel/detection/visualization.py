@@ -81,7 +81,6 @@ class Visual:
 
     def plot_confusion_matrix_image(self,y_true, y_pred, threshold, save_path='confusion_matrix_rf.png'):
         cm = confusion_matrix(y_true, y_pred)
-        print(cm)
         fig = plt.figure(figsize=(6, 5))
         ax = plt.gca()
         im = ax.imshow(cm, interpolation='nearest')
