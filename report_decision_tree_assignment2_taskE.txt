@@ -1,0 +1,20 @@
+Decision Three:
+	
+	Classification report (optimal threshold):
+              precision    recall  f1-score   support
+
+  Non-Planet     0.7264    0.8105    0.7662        95
+      Planet     0.7831    0.6915    0.7345        94
+
+    accuracy                         0.7513       189
+   macro avg     0.7548    0.7510    0.7503       189
+weighted avg     0.7546    0.7513    0.7504       189
+
+
+	Confusion Matrix 
+	
+			Predicted	
+			Non-Planet	Planet
+	Non-Planet	77 (40.7%)	18(9.5%)
+True
+	Planet		29 (15.3%)	65 (34.4%)
