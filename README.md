@@ -62,6 +62,20 @@ daneel -i parameters.yaml -t
 
 The input file should be a YAML file containing the necessary parameters for the analysis.
 
+The YAML file should be in following format.
+
+transit:
+  XO-2N b:
+    t0: 0.               # time of inferior conjunction
+    per: 2.615838        # orbital period in days
+    rp: 0.103            # planet radius (in units of stellar radii)
+    a: 7.993             # semi-major axis (in units of stellar radii)
+    inc: 88.01           # orbital inclination (in degrees)
+    ecc: 0.028           # eccentricity
+    w : 261              # longitude of periastron (in degrees)
+    u : [0.4984,0.0785]  # limb darkening coefficients [u1, u2]
+    limb_dark: quadratic # limb darkening model
+
 ## License
 
 This project is licensed under the MIT License.
