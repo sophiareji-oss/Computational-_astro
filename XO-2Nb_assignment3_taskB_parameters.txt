@@ -1,0 +1,28 @@
+Article: Sing et al. (2011)
+DOI : 10.1051/0004-6361/201015579 
+      10.48550/arXiv.1008.479
+
+[Chemistry]
+fill_gases = H2,He
+ratio = 5.67
+
+    [[H2O]]
+    gas_type = constant
+    mix_ratio=1e-4 to 1e-3
+
+[Temperature]
+profile_type = Isothermal 
+
+[Planet]
+planet_type = Simple
+planet_mass = 0.62
+planet_radius = 0.97
+
+[Star]
+star_type = blackbody
+temperature = 5290
+star_radius = 0.99
+
+
+
+ 
