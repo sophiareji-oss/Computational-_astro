@@ -17,6 +17,15 @@ def main():
         help="Input par file to pass",
     )
 
+    #parser.add_argument(
+      #  "-t",
+       # "--transit",
+       # dest="transit",
+        #required=False,
+       # help="Plots transit lightcurve from yaml file",
+       # action="store_true",
+    #)
+
     parser.add_argument(
         "-d",
         "--detect",
@@ -25,6 +34,7 @@ def main():
         required=False,
         help="Initialise detection algorithms for Exoplanets. DETECT =rf/dt/cnn",
     )
+    
 
     parser.add_argument(
         "-a",
@@ -51,6 +61,9 @@ def main():
 
     input_pars = Parameters(args.input_file).params
 
+    #if args.transit:
+     #   transit = TransitModel(input_pars['transit'])
+      #  transit.plot_light_curve()
     if args.detect:
         CSV_PATH = '/home/sijis/Desktop/com_ast/test/Computational-_astro/src/daneel/detection/tess_data.csv'    # change if needed
         N_BINS = 1000
