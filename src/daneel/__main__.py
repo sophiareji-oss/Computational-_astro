@@ -2,6 +2,7 @@ import datetime
 import argparse
 from daneel.parameters import Parameters
 from daneel.detection import *
+from daneel.atmosphere import *
 
 
 def main():
@@ -19,19 +20,19 @@ def main():
     parser.add_argument(
         "-d",
         "--detect",
-        dest="model",
+        dest="detect",
         type = str,
         required=False,
-        help="Initialise detection algorithms for Exoplanets. MODEL =rf/dt/cnn",
+        help="Initialise detection algorithms for Exoplanets. DETECT =rf/dt/cnn",
     )
 
     parser.add_argument(
         "-a",
         "--atmosphere",
         dest="atmosphere",
+        type = str,
         required=False,
-        help="Atmospheric Characterisazion from input transmission spectrum",
-        action="store_true",
+        help="Atmospheric Characterisazion from input transmission spectrum. ATMOSPHERE = model/retrieve",
     )
     
     parser.add_argument(
@@ -60,7 +61,13 @@ def main():
         model = ML(CSV_PATH,N_BINS,USE_SCALER,SAMPLES_PER_CLASS,args.model)
         model.main()
     if args.atmosphere:
-        pass
+        if args.atmosphere == 'model':
+            atm = Atmosphere(input_pars)
+            atm.model()
+        if args.atmosphere == 'retrieve':
+            atm = Atmosphere(input_pars)
+            atm.retrieve()
+        	
     if args.transit:
         transit = Transit(input_pars)
         transit.flux() 

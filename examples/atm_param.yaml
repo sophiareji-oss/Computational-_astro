@@ -1,0 +1,50 @@
+file_path:
+  opacity_path: '/home/sijis/Desktop/com_ast/notebooks/atmosphere/xsecs'
+  cia_path: '/home/sijis/Desktop/com_ast/notebooks/atmosphere/cia/hitran'
+  data_path: '/home/sijis/Desktop/com_ast/test/Computational-_astro/examples/XO-2Nb_assignment3_model_spectrum.dat'
+
+temperature:
+  isothermal: 1500.0
+  guillot: 1200.0
+planet:
+  planet_radius: 0.97
+  planet_mass: 0.62
+star:
+  temperature: 5290.0
+  radius: 0.99
+
+chemistry:
+  fill_gases:
+    gas: ['H2','He']
+    ratio: 0.172
+  ConstantGas:
+    H2O: 1.2e-2 
+    #CH4: 1.2e-4
+    #CO2: 1.2e-6
+    #CO: 1.2e-8
+    
+pressure: 
+  min: 1
+  max: 1000000
+  layers: 30
+  
+cia_pairs:
+  ['H2-H2','H2-He']
+
+save_path:
+  model:
+    data: 'XO-2Nb_assignment3_model_spectrum.dat'
+    para: 'XO-2Nb_assignment3_model_parameters.txt'
+    fig: 'XO-2Nb_assignment3_model_spectrum'
+    
+  retrieve:
+    para: 'XO-2Nb_assignment3_retrieve_parameters.txt'
+    fig :  assignment3_fitted_figure
+    
+fit_params:
+  planet_radius: [0.9,1.5]
+  T: [900,2000]
+  H2O: [0.00000001,0.01]
+  #CH4: [1e-8,1e-2]
+  #CO2: [1e-8,1e-2]
+  #CO: [1e-8,1e-2]
